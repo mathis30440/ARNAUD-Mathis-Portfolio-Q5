@@ -1,0 +1,423 @@
+/* ---------- Variables & reset ---------- */
+
+:root {
+  --bg-main: #0f172a;        /* fond bleu nuit */
+  --bg-secondary: #111827;
+  --accent: #38bdf8;         /* bleu clair d'accent */
+  --accent-soft: rgba(56, 189, 248, 0.1);
+  --text-main: #e5e7eb;      /* gris très clair */
+  --text-muted: #9ca3af;
+  --border-subtle: #1f2937;
+  --radius-lg: 12px;
+  --radius-sm: 6px;
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+  --max-width: 1100px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ---------- Layout global ---------- */
+
+body > header,
+body > main,
+body > footer {
+  width: 100%;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+/* ---------- Navbar ---------- */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(
+    to right,
+    rgba(15, 23, 42, 0.92),
+    rgba(15, 23, 42, 0.85)
+  );
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f9fafb;
+}
+
+nav .logo span {
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-left: 1.5rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #38bdf8, #a855f7);
+  transition: width 0.25s ease;
+}
+
+nav a:hover {
+  color: #e5e7eb;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------- Section de présentation (hero) ---------- */
+
+#presentation {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(220px, 2fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+#presentation h1 {
+  font-size: clamp(2.2rem, 3vw, 2.8rem);
+  margin-bottom: 0.75rem;
+}
+
+#presentation h1 span {
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#presentation p {
+  color: var(--text-muted);
+  max-width: 38rem;
+}
+
+/* encadré type “carte” (profil) */
+
+.profile-card {
+  background: radial-gradient(circle at top left, #1f2937, #020617);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  box-shadow: var(--shadow-soft);
+}
+
+.profile-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.tag {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: var(--text-muted);
+}
+
+/* ---------- Titres de section ---------- */
+
+section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Boutons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease,
+    background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #0b1220;
+  box-shadow: 0 14px 30px rgba(8, 47, 73, 0.55);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 38px rgba(8, 47, 73, 0.75);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-main);
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+.btn-ghost:hover {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+/* ---------- Cartes de projets / réalisations ---------- */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.7rem;
+}
+
+.card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.5rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.7);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.95);
+  border-color: rgba(56, 189, 248, 0.55);
+  background: radial-gradient(circle at top, #0b1120, #020617);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.card .meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.card .tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0.8rem;
+}
+
+.tech-pill {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: #e0f2fe;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+/* ---------- Tableau des compétences ---------- */
+
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.8);
+}
+
+.skills-table thead {
+  background: linear-gradient(90deg, #0f172a, #111827);
+}
+
+.skills-table th,
+.skills-table td {
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid #1f2937;
+  text-align: left;
+}
+
+.skills-table th {
+  font-weight: 600;
+}
+
+.skills-table tbody tr:nth-child(even) {
+  background-color: #020617;
+}
+
+.skills-table tbody tr:hover {
+  background-color: #030712;
+}
+
+/* ---------- Section contact ---------- */
+
+#contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 1.3rem 1.5rem 1.7rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  background: radial-gradient(circle at top, #020617, #000);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+  nav {
+    justify-content: space-between;
+  }
+
+  nav a {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+  }
+
+  #presentation {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    margin: 3rem auto;
+  }
+}
+
+@media (max-width: 520px) {
+  nav {
+    padding-inline: 1rem;
+  }
+
+  nav a {
+    display: none; /* simplification: nav compact sur mobile */
+  }
+
+  main {
+    padding-inline: 1rem;
+  }
+
+  .profile-card {
+    padding: 1.35rem;
+  }
+}
+
+.contact-infos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.contact-item p {
+  margin-bottom: 0.25rem;
+}
+
+.hero-actions {
+  margin-top: 1.5rem; 
+  display: flex;
+  gap: 0.8rem;        
+  flex-wrap: wrap;
+}
+
+/* Espaces globaux entre paragraphes */
+p {
+  margin-bottom: 0.9rem;   /* espace sous chaque paragraphe */
+}
+
+/* Un peu plus d’espace pour les paragraphes de la présentation */
+#presentation p {
+  margin-bottom: 1.1rem;
+}
+
+/* Et pour la partie parcours, où les blocs sont longs */
+#parcours p {
+  margin-bottom: 1.2rem;
+}
+
+.code-img {
+  display: block;
+  width: 100%;          /* même largeur que le bloc de texte */
+  max-width: 100%;
+  margin: 0.6rem 0;     /* espace vertical entre texte et images */
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+

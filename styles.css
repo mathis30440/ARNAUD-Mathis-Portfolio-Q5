@@ -397,9 +397,10 @@ footer {
   flex-wrap: wrap;
 }
 
-/* Espaces globaux entre paragraphes */
 p {
-  margin-bottom: 0.9rem;   /* espace sous chaque paragraphe */
+  margin-bottom: 0.9rem;
+  text-align: justify;
+  text-justify: inter-word; 
 }
 
 /* Un peu plus d’espace pour les paragraphes de la présentation */
@@ -421,3 +422,7 @@ p {
   border: 1px solid rgba(148, 163, 184, 0.4);
 }
 
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+}

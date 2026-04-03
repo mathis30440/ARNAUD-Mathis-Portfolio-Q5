@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Compétence 4 – Portfolio BUT2</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">PORTFOLIO<span>.</span></div>
+      <div class="nav-links">
+        <a href="../index.html">Accueil</a>
+        <a href="../realisations.html">Réalisations</a>
+        <a href="../competences.html">Portfolio d'apprentissage</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+  <section class="competence-section">
+
+    <!-- En-tête de la compétence -->
+    <header class="card">
+      <p class="meta">Compétence 4</p>
+      <h2>Gérer des données de l'information</h2>
+      <p>
+        Cette compétence porte sur la conception, la manipulation et la sécurisation des données
+        dans le cadre de systèmes d'information. Elle englobe la modélisation de bases de données
+        relationnelles, l'écriture de requêtes SQL et PL/SQL, ainsi que la restitution des données
+        à travers des interfaces applicatives. Le projet SAE 3.01 (forum de questions et d'échanges)
+        a été le principal terrain d'application de cette compétence.
+      </p>
+    </header>
+
+    <!-- Résumé niveaux -->
+    <section class="cards-grid" style="margin-top:1.5rem;">
+      <article class="card">
+        <h3>Niveau 1</h3>
+        <p class="meta">Concevoir et mettre en place une base de données à partir d'un cahier des charges client</p>
+        <p>
+          En BUT1, j'ai découvert la modélisation et l'interrogation de bases de données
+          relationnelles à travers des cours et des travaux pratiques : conception de schémas
+          entité-association, écriture de requêtes SQL (SELECT, INSERT, UPDATE, DELETE).
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Niveau 2</h3>
+        <p class="meta">Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité</p>
+        <p>
+          En BUT2, j'ai approfondi ces acquis dans la SAE 3.01 : conception et évolution d'un
+          schéma de base de données complexe en PL/SQL, gestion de l'intégrité, des transactions,
+          et restitution des données dans une interface PHP.
+        </p>
+      </article>
+    </section>
+
+    <!-- Détails niveau 1 -->
+    <section class="card" style="margin-top:2rem;">
+      <h3>Apprentissages critiques – Niveau 1</h3>
+      <p class="meta">Concevoir et mettre en place une base de données à partir d'un cahier des charges client</p>
+
+      <div class="ac-list">
+        <div class="ac-item">
+          <h4>AC 1 – Mettre à jour et interroger une base de données relationnelle (en requêtes directes ou à travers une application)</h4>
+          <p>
+            En cours de bases de données et en TP, j'ai manipulé des bases relationnelles
+            avec SQL : écriture de requêtes de sélection avec jointures et conditions, insertion
+            et mise à jour d'enregistrements, suppression sécurisée avec contraintes de clé étrangère.
+            Ces compétences ont ensuite été directement appliquées dans le développement du forum,
+            où chaque action utilisateur (poster une question, voter, s'inscrire) correspondait
+            à une ou plusieurs requêtes SQL exécutées depuis PHP.
+          </p>
+        </div>
+
+        <div class="ac-item">
+          <h4>AC 2 – Visualiser des données</h4>
+          <p>
+            Dans le cadre du forum (SAE 3.01), j'ai travaillé à la restitution des données
+            sous forme lisible pour l'utilisateur : affichage des listes de questions avec
+            leur nombre de réponses et de votes, classement par popularité ou date, et présentation
+            de l'état de chaque question (brouillon, publiée, archivée). Ces affichages ont été
+            réalisés en PHP, en combinant des requêtes SQL et un rendu HTML structuré.
+          </p>
+        </div>
+
+        <div class="ac-item">
+          <h4>AC 3 – Concevoir une base de données relationnelle à partir d'un cahier des charges</h4>
+          <p>
+            Pour la SAE 3.01, nous avons conçu le schéma de la base de données à partir du
+            cahier des charges du forum : identification des entités (utilisateurs, questions,
+            réponses, votes, catégories), définition des relations et des contraintes d'intégrité
+            (clés primaires, clés étrangères, unicité). Ce travail de modélisation a été réalisé
+            collectivement, en itérant à chaque sprint pour intégrer de nouvelles fonctionnalités.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Détails niveau 2 -->
+    <section class="card" style="margin-top:2rem; margin-bottom:2rem;">
+      <h3>Apprentissages critiques – Niveau 2</h3>
+      <p class="meta">Optimiser une base de données, interagir avec une application et mettre en œuvre la sécurité</p>
+
+      <div class="ac-list">
+        <div class="ac-item">
+          <h4>AC 1 – Optimiser les modèles de données de l'entreprise</h4>
+          <p>
+            Au fil des sprints de la SAE 3.01, le schéma de la base a évolué pour s'adapter
+            aux nouvelles fonctionnalités. J'ai participé à l'optimisation du modèle en
+            évitant la redondance, en normalisant les tables et en ajoutant des contraintes
+            d'intégrité pour garantir la cohérence des données. Nous avons également veillé
+            à écrire des requêtes efficaces pour limiter le nombre d'appels à la base.
+          </p>
+        </div>
+
+        <div class="ac-item">
+          <h4>AC 2 – Assurer la confidentialité des données (intégrité et sécurité)</h4>
+          <p>
+            La gestion des comptes utilisateurs dans le forum a nécessité des mesures de sécurité :
+            hachage des mots de passe avant stockage, contrôle des droits d'accès selon le rôle
+            (utilisateur standard ou administrateur), et validation des entrées pour prévenir
+            les injections SQL. J'ai également veillé à ce que seul l'auteur d'une question
+            ou un administrateur puisse la modifier ou la supprimer.
+          </p>
+        </div>
+
+        <div class="ac-item">
+          <h4>AC 3 – Organiser la restitution de données à travers la programmation et la visualisation</h4>
+          <p>
+            J'ai développé les pages PHP qui récupèrent les données depuis la base Oracle
+            et les présentent à l'utilisateur de façon structurée : liste des questions filtrables,
+            pages de détail d'une question avec ses réponses et votes, tableau de bord administrateur.
+            Ce travail m'a appris à séparer la logique de récupération des données du rendu HTML,
+            pour un code plus lisible et maintenable.
+          </p>
+        </div>
+
+        <div class="ac-item">
+          <h4>AC 4 – Manipuler des données hétérogènes</h4>
+          <p>
+            Le forum gérait plusieurs types de données : données textuelles (questions, réponses),
+            données numériques (votes, identifiants), états énumérés (statuts des questions) et
+            horodatages. J'ai appris à gérer ces différents types dans les requêtes PL/SQL,
+            à traiter les conversions de types et à adapter l'affichage en fonction de la
+            nature des données restituées.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </section>
+</main>
+
+  <footer>
+    © 2025 Mathis ARNAUD – Portfolio BUT Informatique
+  </footer>
+</body>
+</html>

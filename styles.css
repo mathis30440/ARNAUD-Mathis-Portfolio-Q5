@@ -426,3 +426,93 @@ p {
   text-align: justify;
   text-justify: inter-word;
 }
+
+/* ---------- Grille des compétences (portfolio d’apprentissage) ---------- */
+
+.competences-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+.competence-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1rem 1.3rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.7);
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.competence-card img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.9rem;
+}
+
+.competence-card h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+}
+
+.competence-card p {
+  margin-bottom: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.competence-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.95);
+  border-color: rgba(56, 189, 248, 0.55);
+  background: radial-gradient(circle at top, #0b1120, #020617);
+}
+
+
+@media (max-width: 900px) {
+  .competences-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .competences-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.competence-section {
+  margin-top: 3rem;
+}
+
+/* Liste d'apprentissages critiques dans une carte */
+.ac-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ac-item {
+  padding: 0.8rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: radial-gradient(circle at top, #020617, #020617);
+}
+
+.ac-item h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.ac-item p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
